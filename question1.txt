@@ -1,0 +1,18 @@
+Q1. How to set multiple remote repositories for the same project? Explain the use case. you should have a working demo of it.
+Ans:-
+    To set multiple remote repo for the same roject is helpful in verious scenerios 
+    such as
+    -push changes o diff platform provider(github,gitlab,bitbuket)
+      at same time
+    -work in collaboration to diff team and organization at same time
+    -also to set up backup of the perticular data/repo on diff platform in case of any problems
+    git remote add origin https://github.com/yourusername/my-project.git
+
+    add first remote 
+      git remote add origin https://github.com/yourusername1/my-project.git
+    add  second remote
+       git remote add origin https://github.com/yourusername2/my-project.git
+    
+    push changes to both remote repo
+      github--git push origin master
+      gitlab--git push gitlab master
