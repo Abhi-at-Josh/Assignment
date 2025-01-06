@@ -1,0 +1,17 @@
+Q6. How to un-stage changes from the staged area. write command for it
+Ans::
+    to unstage file from staging area can be done usig to commands
+    1.git restore
+    2.gti reset
+
+1).git restore
+PS D:\josh1> echo "file to be use to demostare the staging ans unstaging">example1.txt
+PS D:\josh1> git add .
+PS D:\josh1> git restore --staged example1.txt
+this command will remove the file from staging area
+
+2).reset
+PS D:\josh1> git add example1.txt
+PS D:\josh1> git reset example1.txt 
+Unstaged changes after reset:
+M       quetion6.txt
