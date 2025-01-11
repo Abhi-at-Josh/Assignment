@@ -1,0 +1,54 @@
+
+Q2. What happens when a file is deleted in the main branch and updated in a feature branch, and how is this handled during a merge?
+  
+   I have tried it as follow--
+   PS D:\josh1> echo "1. What happens when a file is deleted in the main branch and updated in a feature branch, and how is this handled during a merge?">question2.txt
+PS D:\josh1> git checkout main
+Switched to branch 'main'
+A       question1.txt
+Your branch is up to date with 'origin/main'.
+PS D:\josh1> echo "this is file which is going to be deleted in main and updated in feture branch">example.txt
+PS D:\josh1> git add example.txt
+PS D:\josh1> git commit -m "it is example.txt file"
+[main 9ff4fbd] it is example.txt file
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 example.txt
+ create mode 100644 question1.txt
+PS D:\josh1> git checkout -b feature-branch
+Switched to a new branch 'feature-branch'
+PS D:\josh1> echo "updating the file example.txt in feature branch">example.txt
+PS D:\josh1> git add example.txt
+PS D:\josh1> git commit -m "updating the file in feaure branch"
+[feature-branch 8edce40] updating the file in feaure branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+PS D:\josh1> git checkout main
+Switched to branch 'main'
+M       question1.txt
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+PS D:\josh1> rm example.txt
+PS D:\josh1> git add -A
+PS D:\josh1> git commit -m "deleting the file example.txt from main branch"
+[main 1c5ecbc] deleting the file example.txt from main branch
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 example.txt
+ create mode 100644 question2.txt
+PS D:\josh1> git merge feature-branch
+CONFLICT (modify/delete): example.txt deleted in HEAD and modified in feature-branch.  Version feature-branch of example.txt left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\josh1> 
+
+
+got an Conflict----
+
+CONFLICT (modify/delete): example.txt deleted in HEAD and modified in feature-branch.  Version feature-branch of example.txt left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+
+to resolve the conflict inspect it and decide if want to keep or remove it 
+if want to keep the simple
+   
+    git add example.txt
+
+    and bring it to staging area
+
+    and do git commit
