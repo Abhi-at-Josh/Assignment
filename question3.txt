@@ -1,7 +1,7 @@
 Q3. What does the git ls-files command do, and what information does its output provide regarding the state of files in a Git repository?
 Ans:--
-   this command in git lsist all the files in current working diresctory
-   which are been tracked by git 
+   This command in git lsist all the files in current working diresctory
+    which are been tracked by git 
    This command will output the path of all the files in the repo which are trecked by git
 
    git ls-files..
